@@ -1,4 +1,9 @@
 .result{
-	color : blue;
 	font-size: 18pt;
+}
+.positive{
+	color : green;
+}
+.negative{
+	color : red;
 }
