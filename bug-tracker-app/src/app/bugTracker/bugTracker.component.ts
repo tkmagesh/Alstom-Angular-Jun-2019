@@ -11,6 +11,8 @@ export class BugTrackerComponent implements OnInit{
 	
 	bugSortBy : string = '';
 	bugSortByDescending : boolean = false;
+
+	newBugName : string = '';
 	/*private bugOperations : BugOperationsService;
 
 	constructor(_bugOperations : BugOperationsService){
@@ -21,6 +23,7 @@ export class BugTrackerComponent implements OnInit{
 		
 	}
 
+	
 	ngOnInit(){
 		this.bugs.push({ name : 'Server communication failure', isClosed : false});
 		this.bugs.push({ name : 'User actions not recognized', isClosed : true});
@@ -29,9 +32,9 @@ export class BugTrackerComponent implements OnInit{
 
 	}
 
-	onAddNewClick(newBugName : string){
-		let newBug : Bug = this.bugOperations.createNew(newBugName);
-		this.bugs.push(newBug);
+	onAddNewClick(){
+		let newBug : Bug = this.bugOperations.createNew(this.newBugName);
+		this.bugs = [...this.bugs, newBug];
 	}
 
 	onBugNameClick(bugToToggle : Bug){
