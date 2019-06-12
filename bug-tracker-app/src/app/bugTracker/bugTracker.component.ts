@@ -25,10 +25,7 @@ export class BugTrackerComponent implements OnInit{
 
 	
 	ngOnInit(){
-		this.bugs.push({ name : 'Server communication failure', isClosed : false});
-		this.bugs.push({ name : 'User actions not recognized', isClosed : true});
-		this.bugs.push({ name : 'Data integrity checks failed', isClosed : false});
-		this.bugs.push({ name : 'Application not responding', isClosed : false});
+		
 
 	}
 

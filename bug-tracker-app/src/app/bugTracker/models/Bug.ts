@@ -1,5 +1,7 @@
 
 export interface Bug{
+	id : string,
 	name : string,
-	isClosed : boolean
+	isClosed : boolean,
+	createdAt : Date
 }
