@@ -38,7 +38,8 @@ export class BugTrackerComponent implements OnInit{
 	}
 
 	onBugNameClick(bugToToggle : Bug){
-		this.bugOperations.toggle(bugToToggle);
+		let toggledBug = this.bugOperations.toggle(bugToToggle);
+		this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug);
 	}
 
 	onRemoveClosedClick(){
@@ -46,6 +47,7 @@ export class BugTrackerComponent implements OnInit{
 	}
 
 	getClosedCount(){
+		console.log('getClosedCount triggered');
 		return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
 	}
 }
