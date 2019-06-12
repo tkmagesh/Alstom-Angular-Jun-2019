@@ -5,7 +5,6 @@ import { Bug } from '../models/Bug';
 	selector : 'app-bug-stats',
 	template : `
 		<section class="stats">
-			<div>{{getCurrentTime()}}</div>
 			<span class="closed">{{bugs | closedCount}}</span>
 			<span> / </span>
 			<span>{{bugs.length}}</span>
@@ -18,7 +17,5 @@ export class BugStatsComponent{
 	@Input('data')
 	bugs : Bug[] = [];
 
-	getCurrentTime(){
-		return Date();
-	}
+	
 }

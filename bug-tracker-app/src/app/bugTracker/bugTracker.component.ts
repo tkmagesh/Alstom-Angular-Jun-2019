@@ -13,20 +13,16 @@ export class BugTrackerComponent implements OnInit{
 	bugSortByDescending : boolean = false;
 
 	newBugName : string = '';
-	/*private bugOperations : BugOperationsService;
-
-	constructor(_bugOperations : BugOperationsService){
-		this.bugOperations = _bugOperations;
-	}*/
-
 	constructor(private bugOperations : BugOperationsService){
 		
+	}	
+	ngOnInit(){
+		this.loadBugs();
+
 	}
 
-	
-	ngOnInit(){
-		
-
+	private loadBugs(){
+		this.bugs = this.bugOperations.getAll();
 	}
 
 	onAddNewClick(){
@@ -40,11 +36,9 @@ export class BugTrackerComponent implements OnInit{
 	}
 
 	onRemoveClosedClick(){
-		this.bugs = this.bugs.filter(bug => !bug.isClosed);
-	}
-
-	getClosedCount(){
-		console.log('getClosedCount triggered');
-		return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
+		this.bugs
+			.filter(bug => bug.isClosed)
+			.forEach(closedBug => this.bugOperations.remove(closedBug));
+		this.loadBugs();
 	}
 }

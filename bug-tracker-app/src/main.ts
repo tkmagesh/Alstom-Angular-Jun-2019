@@ -4,10 +4,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-//npm install uuid --save
-import * as uuid from 'uuid/v4';
-
-
 if (environment.production) {
   enableProdMode();
 }
