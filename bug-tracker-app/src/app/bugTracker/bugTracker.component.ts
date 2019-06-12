@@ -12,7 +12,7 @@ export class BugTrackerComponent implements OnInit{
 	bugSortBy : string = '';
 	bugSortByDescending : boolean = false;
 
-	newBugName : string = '';
+	
 	constructor(private bugOperations : BugOperationsService){
 		
 	}	
@@ -25,8 +25,7 @@ export class BugTrackerComponent implements OnInit{
 		this.bugs = this.bugOperations.getAll();
 	}
 
-	onAddNewClick(){
-		let newBug : Bug = this.bugOperations.createNew(this.newBugName);
+	onNewBugAdded(newBug : Bug){
 		this.bugs = [...this.bugs, newBug];
 	}
 
