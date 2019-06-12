@@ -7,7 +7,7 @@ import { Bug } from '../models/Bug';
 	template : `
 		<section class="edit">
 			<label for="">Bug Name :</label>
-			<input type="text" (keyup)="newBugName = $event.target.value">
+			<input type="text" (keyup)="newBugName = $event.target.value" [value]="newBugName">
 			<span> [ {{newBugName.length}} ] </span>
 			<input type="button" value="Add New" (click)="onAddNewClick()">
 		</section>
@@ -25,5 +25,6 @@ export class BugEditComponent{
 	onAddNewClick(){
 		let newBug : Bug = this.bugOperations.createNew(this.newBugName);
 		this.bugAdded.emit(newBug);
+		this.newBugName = '';
 	}
 }
