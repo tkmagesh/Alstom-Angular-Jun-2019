@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Bug } from './models/Bug';
 import { BugOperationsService } from './services/bugOperations.service';
 import { HttpClient } from '@angular/common/http';
+import { forkJoin } from 'rxjs';
 
 @Component({
 	selector : 'app-bug-tracker',
@@ -37,16 +38,15 @@ export class BugTrackerComponent implements OnInit{
 			.toggle(bugToToggle)
 			.subscribe(toggledBug => {
 				this.bugs = this.bugs.map(bug => bug.id=== bugToToggle.id ? toggledBug : bug);		
-			})
-		
+			});	
 	}
 
 	onRemoveClosedClick(){
-		this.bugs
+		let allObservables = this.bugs
 			.filter(bug => bug.isClosed)
-			.forEach(closedBug => this.bugOperations
-					.remove(closedBug)
-					.subscribe(() => {}));
-		this.loadBugs();
+			.map(closedBug => this.bugOperations.remove(closedBug));
+				
+		forkJoin(allObservables)
+			.subscribe(() => this.loadBugs());
 	}
 }
