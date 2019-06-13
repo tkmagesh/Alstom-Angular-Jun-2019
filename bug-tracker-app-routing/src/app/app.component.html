@@ -1,0 +1,6 @@
+<h1>Bug Tracker</h1>
+<hr>
+<input type="text" #txtMessage/>
+<input type="button" value="Send" (click)="onSendClick(txtMessage.value)" />
+{{message}}
+<router-outlet></router-outlet>

@@ -1,13 +1,6 @@
 {
   "bugs": [
     {
-      "id": 1,
-      "name": "Bugs are not toggled",
-      "isClosed": false,
-      "createdAt": "2019-05-31T11:35:52.508Z",
-      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet."
-    },
-    {
       "id": 2,
       "name": "Server communication failure",
       "isClosed": false,
@@ -15,10 +8,17 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet."
     },
     {
-      "id": 5,
-      "name": "Bug - 1",
+      "id": 6,
+      "name": "Unable to debug",
       "isClosed": false,
-      "createdAt": "2019-06-13T09:51:51.706Z"
+      "createdAt": "2019-06-13T10:22:22.842Z"
+    },
+    {
+      "id": 7,
+      "name": "Router is not routing",
+      "isClosed": false,
+      "createdAt": "2019-06-13T10:37:45.573Z",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet."
     }
   ],
   "projects": [
